@@ -18,7 +18,7 @@ function ApiDemo() {
         // body: JSON.stringify({ prompt: inputValue }),
       });
       const data = await res.json();
-      setResponse(data.response.body);
+      setResponse(data.body);
       // setResponse(data.response || JSON.stringify(data.body));
     } catch (err) {
       setResponse('Failed to fetch: ' + err.message);
