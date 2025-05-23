@@ -23,6 +23,10 @@ body {
   color: #333333;
 }
 
+.card h2 .highlight-red {
+  color: red;
+}
+
 label {
   display: block;
   margin-bottom: 0.5rem;
@@ -77,4 +81,6 @@ button:disabled {
   white-space: pre-wrap;
   height: 40vh;
   overflow-y: auto;
+  border: 2px solid green;
+  box-shadow: 0 4px 12px rgba(0, 128, 0, 0.2);
 }
