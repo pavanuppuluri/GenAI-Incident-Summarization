@@ -19,7 +19,7 @@ const ApiDemo = () => {
       });
 
       const data = await res.json();
-      setResponse(JSON.stringify(data, null, 2));
+      setResponse(JSON.stringify(data.body, null, 2));
     } catch (error) {
       setResponse(`Error: ${error.message}`);
     }
