@@ -29,7 +29,7 @@ function ApiDemo() {
   return (
     <div className="container">
       <div className="card">
-        <h2>API Demo</h2>
+        <h2>Incident Summarization using GenAI - Demo</h2>
         <label htmlFor="input">Enter Input</label>
         <input
           id="input"
