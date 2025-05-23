@@ -1,3 +1,5 @@
+/* App.css – professional and modern styling */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,7 +32,7 @@ label {
   text-align: left;
 }
 
-input {
+textarea {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
@@ -38,9 +40,11 @@ input {
   font-size: 1rem;
   margin-bottom: 1.5rem;
   transition: border-color 0.2s;
+  resize: vertical;
+  min-height: 120px;
 }
 
-input:focus {
+textarea:focus {
   border-color: #0070f3;
   outline: none;
 }
