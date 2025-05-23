@@ -1,4 +1,4 @@
-# GenAI Incident Summarization
+# Incident Summarization - Using GenAI
 
 This project leverages [Cohere's](https://cohere.com) large language models to automatically generate concise, context-rich summaries from raw incident data. It’s designed to support site reliability engineers, support staff, and DevOps teams in quickly understanding and documenting incidents.
 
