@@ -15,7 +15,7 @@ const ApiDemo = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ prompt: inputValue }),
+        // body: JSON.stringify({ prompt: inputValue }),
       });
 
       const data = await res.json();
@@ -29,7 +29,7 @@ const ApiDemo = () => {
   return (
     <div className="container">
       <div className="card">
-        <h2>Incident Summarization using Cohere</h2>
+        <h2><span className="highlight-red">Incident Summarization</span> using Cohere</h2>
         <label htmlFor="apiInput">Enter input</label>
         <textarea
           id="apiInput"
