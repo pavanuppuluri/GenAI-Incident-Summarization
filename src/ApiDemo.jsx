@@ -31,23 +31,25 @@ function ApiDemo() {
     <div className="container">
       <div className="card">
         <h2><span className="highlight-blue">Incident Summarization</span> using Cohere</h2>
-        <label htmlFor="input">Enter Input:</label>
+        <label htmlFor="input">Incident Details</label>
         <textarea
           id="input"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Paste your case details here..."
+          style={{ height: '25vh' }}
         />
         <button onClick={handleSubmit} disabled={loading}>
           {loading ? 'Summarizing...' : 'Submit'}
         </button>
 
-        <label htmlFor="response" style={{ marginTop: '1.5rem' }}>Response:</label>
+        <label htmlFor="response" style={{ marginTop: '1.5rem' }}>Incident Summary</label>
         <textarea
           id="response"
           className="response-box"
           readOnly
           value={response}
+          style={{ height: '25vh' }}
         />
       </div>
     </div>
