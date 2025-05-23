@@ -29,7 +29,7 @@ const ApiDemo = () => {
   return (
     <div className="container">
       <div className="card">
-        <h2>API Demo</h2>
+        <h2>Incident Summarization using Cohere</h2>
         <label htmlFor="apiInput">Enter input</label>
         <textarea
           id="apiInput"
