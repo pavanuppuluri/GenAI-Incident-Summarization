@@ -43,7 +43,7 @@ function ApiDemo() {
           {loading ? 'Summarizing...' : 'Submit'}
         </button>
 
-        <label htmlFor="response" style={{ marginTop: '1.5rem' }}>Incident Summary</label>
+        <label htmlFor="response" style={{ marginTop: '1.5rem' }}>Incident Summary </label>
         <textarea
           id="response"
           className="response-box"
