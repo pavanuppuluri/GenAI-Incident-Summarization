@@ -28,7 +28,7 @@ function ApiDemo() {
   };
 
   return (
-    <div className="container">
+    <div className="container" style={{ width: '75vw', margin: '0 auto' }}>
       <div className="card">
         <h2><span className="highlight-blue">Incident Summarization</span> using Cohere</h2>
         <label htmlFor="input">Incident Details</label>
