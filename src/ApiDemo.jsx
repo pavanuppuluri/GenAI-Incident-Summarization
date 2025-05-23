@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './index.css';
 
 const ApiDemo = () => {
   const [inputValue, setInputValue] = useState('');
