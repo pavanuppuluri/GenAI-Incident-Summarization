@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './index.css';
+import './App.css';
 
-const ApiDemo = () => {
+function ApiDemo() {
   const [inputValue, setInputValue] = useState('');
   const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
@@ -17,39 +17,40 @@ const ApiDemo = () => {
         },
         // body: JSON.stringify({ prompt: inputValue }),
       });
-
       const data = await res.json();
-      setResponse(data.body);
-     // setResponse(JSON.stringify(data.body, null, 2));
-    } catch (error) {
-      setResponse(`Error: ${error.message}`);
+      setResponse(data.response || JSON.stringify(data));
+    } catch (err) {
+      setResponse('Failed to fetch: ' + err.message);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
     <div className="container">
       <div className="card">
-        <h2><span className="highlight-red">Incident Summarization</span> using Cohere</h2>
-        <label htmlFor="apiInput">Enter input</label>
+        <h2><span className="highlight-blue">Incident Summarization</span> using Cohere</h2>
+        <label htmlFor="input">Enter Input:</label>
         <textarea
-          id="apiInput"
+          id="input"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Type your input here..."
+          placeholder="Paste your case details here..."
         />
-        <button onClick={handleSubmit} disabled={loading || !inputValue}>
-          {loading ? 'Calling API...' : 'Submit'}
+        <button onClick={handleSubmit} disabled={loading}>
+          {loading ? 'Summarizing...' : 'Submit'}
         </button>
-        {response && (
-          <div className="response-box">
-            <strong>Response:</strong>
-            <pre>{response}</pre>
-          </div>
-        )}
+
+        <label htmlFor="response" style={{ marginTop: '1.5rem' }}>Response:</label>
+        <textarea
+          id="response"
+          className="response-box"
+          readOnly
+          value={response}
+        />
       </div>
     </div>
   );
-};
+}
 
 export default ApiDemo;
