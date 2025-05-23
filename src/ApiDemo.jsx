@@ -10,12 +10,12 @@ const ApiDemo = () => {
     setLoading(true);
     setResponse('');
     try {
-      const res = await fetch('https://your-api-endpoint.com/endpoint', {
+      const res = await fetch('https://4wigvasicl.execute-api.us-east-1.amazonaws.com/dev', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ input: inputValue }),
+        body: JSON.stringify({ prompt: inputValue }),
       });
 
       const data = await res.json();
