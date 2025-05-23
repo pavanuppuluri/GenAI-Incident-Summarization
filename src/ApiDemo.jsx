@@ -1,55 +1,54 @@
-import React, { useState } from "react";
-import './index.css';
+import React, { useState } from 'react';
+import './App.css';
 
-function ApiDemo() {
-  const [inputValue, setInputValue] = useState("");
-  const [response, setResponse] = useState(null);
+const ApiDemo = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const callApi = async () => {
+  const handleSubmit = async () => {
     setLoading(true);
+    setResponse('');
     try {
-      const res = await fetch("https://your-api-endpoint.com/api", {
-        method: "POST",
+      const res = await fetch('https://your-api-endpoint.com/endpoint', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ input: inputValue }),
       });
 
       const data = await res.json();
-      setResponse(data);
+      setResponse(JSON.stringify(data, null, 2));
     } catch (error) {
-      setResponse({ error: "Something went wrong." });
-    } finally {
-      setLoading(false);
+      setResponse(`Error: ${error.message}`);
     }
+    setLoading(false);
   };
 
   return (
     <div className="container">
       <div className="card">
-        <h2>Incident Summarization using GenAI - Demo</h2>
-        <label htmlFor="input">Enter Input</label>
-        <input
-          id="input"
-          type="text"
+        <h2>API Demo</h2>
+        <label htmlFor="apiInput">Enter input</label>
+        <textarea
+          id="apiInput"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Type something..."
+          placeholder="Type your input here..."
         />
-        <button onClick={callApi} disabled={loading || !inputValue.trim()}>
-          {loading ? "Calling API..." : "Send Request"}
+        <button onClick={handleSubmit} disabled={loading || !inputValue}>
+          {loading ? 'Calling API...' : 'Submit'}
         </button>
         {response && (
           <div className="response-box">
             <strong>Response:</strong>
-            <pre>{JSON.stringify(response, null, 2)}</pre>
+            <pre>{response}</pre>
           </div>
         )}
       </div>
     </div>
   );
-}
+};
 
 export default ApiDemo;
