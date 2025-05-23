@@ -10,7 +10,7 @@ const ApiDemo = () => {
     setLoading(true);
     setResponse('');
     try {
-      const res = await fetch('https://4wigvasicl.execute-api.us-east-1.amazonaws.com/dev', {
+      const res = await fetch('https://4wigvasicl.execute-api.us-east-1.amazonaws.com/dev?prompt='+inputValue, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
